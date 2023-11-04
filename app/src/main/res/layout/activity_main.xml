@@ -7,64 +7,73 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        tools:layout_editorAbsoluteY="-73dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-70dp">
 
         <EditText
             android:id="@+id/inputA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="МОСОБЛЕИРЦ"/>
+            android:hint="МОСОБЛЕИРЦ" />
 
         <EditText
             android:id="@+id/inputB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ИНГРАД (носитель)"/>
+            android:hint="ИНГРАД (носитель)" />
 
         <EditText
             android:id="@+id/inputC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ИНГРАД (энергия)"/>
+            android:hint="ИНГРАД (энергия)" />
 
         <EditText
             android:id="@+id/inputD"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Электричество"/>
+            android:hint="Электричество" />
 
         <Button
             android:id="@+id/calculateButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Рассчитать"/>
+            android:text="Рассчитать" />
 
-        <Button
-            android:id="@+id/clearButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Очистить поля"
-            android:onClick="clearFields" />
+            android:orientation="horizontal"
+            android:gravity="center">
 
-        <Button
-            android:id="@+id/copyButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Копировать"
-            android:onClick="copyText" />
+            <Button
+                android:id="@+id/copyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="copyText"
+                android:text="Копировать" />
+
+            <Button
+                android:id="@+id/clearButton"
+                android:layout_width="196dp"
+                android:layout_height="wrap_content"
+                android:onClick="clearFields"
+                android:text="Очистить поля" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/resultText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Результат: "
-            android:textSize="18sp"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:textSize="18sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
