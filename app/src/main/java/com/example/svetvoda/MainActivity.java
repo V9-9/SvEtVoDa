@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try {
                 double a = Double.parseDouble(inputA.getText().toString());
                 double b = Double.parseDouble(inputB.getText().toString());
                 double c = Double.parseDouble(inputC.getText().toString());
@@ -48,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
                 resultText.setText(resultMessage);
 
                 saveInputState();
+                } catch (NumberFormatException e) {
+                    Toast.makeText(MainActivity.this, "Введите целое число либо вещественное число (через ТОЧКУ)!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         Button clearButton = findViewById(R.id.clearButton);
