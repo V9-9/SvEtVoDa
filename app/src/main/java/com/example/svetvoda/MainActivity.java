@@ -39,18 +39,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                double a = Double.parseDouble(inputA.getText().toString());
-                double b = Double.parseDouble(inputB.getText().toString());
-                double c = Double.parseDouble(inputC.getText().toString());
-                double d = Double.parseDouble(inputD.getText().toString());
+                    String inputAString = inputA.getText().toString().replace(",", ".");
+                    String inputBString = inputB.getText().toString().replace(",", ".");
+                    String inputCString = inputC.getText().toString().replace(",", ".");
+                    String inputDString = inputD.getText().toString().replace(",", ".");
 
-                String resultMessage = String.format("Илья, привет!\nВода=%.2f руб.;\nЭлектричество=%.2f руб.;\nИТОГО: %.2f руб.",
-                        ((a - 307.93)+(b + c)), d, ((a - 307.93) + (b + c) + d));
-                resultText.setText(resultMessage);
+                    double a = Double.parseDouble(inputAString);
+                    double b = Double.parseDouble(inputBString);
+                    double c = Double.parseDouble(inputCString);
+                    double d = Double.parseDouble(inputDString);
 
-                saveInputState();
+                    String resultMessage = String.format("Илья, привет!\nВода = %.2f руб.;\nЭлектричество = %.2f руб.;\nИТОГО: %.2f руб.",
+                            ((a - 307.93)+(b + c)), d, ((a - 307.93) + (b + c) + d));
+                    resultText.setText(resultMessage);
+
+                    saveInputState();
                 } catch (NumberFormatException e) {
-                    Toast.makeText(MainActivity.this, "Введите целое число либо вещественное число (через ТОЧКУ)!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Введите число!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
